@@ -1,0 +1,20 @@
+<div class="question" *ngIf="question">
+  <div class="question__header">
+    <h4 class="question__header--title">
+      <span>Q:</span> {{ question.question | atob }}
+    </h4>
+    <div class="question__header--timer">
+      Time: ⌛ {{ countdown }} <span>seconds</span>
+    </div>
+  </div>
+
+  <div class="question__answers">
+    <div
+      class="question__answers--item"
+      *ngFor="let answer of answers"
+      (click)="onStrike(answer)"
+    >
+      {{ answer.answer | atob }}
+    </div>
+  </div>
+</div>
